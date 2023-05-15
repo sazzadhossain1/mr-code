@@ -48,6 +48,12 @@ const Header = () => {
               <Link to="/blog">Blog</Link>
             </li>
             <li>
+              <Link to="/courses">Courses</Link>
+            </li>
+            <li>
+              <Link to="/faq">FAQ</Link>
+            </li>
+            <li>
               <Link to="/login">Login</Link>
             </li>
             <li>
@@ -66,6 +72,12 @@ const Header = () => {
           </li>
           <li>
             <Link to="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link to="/courses">Courses</Link>
+          </li>
+          <li>
+            <Link to="/faq">FAQ</Link>
           </li>
           <li>
             <Link to="/login">Login</Link>
