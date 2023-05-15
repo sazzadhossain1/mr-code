@@ -22,11 +22,11 @@ function App() {
         },
         {
           path: "/login",
-          element: <Register></Register>,
+          element: <Login></Login>,
         },
         {
           path: "/register",
-          element: <Login></Login>,
+          element: <Register></Register>,
         },
         {
           path: "/blog",
@@ -36,7 +36,7 @@ function App() {
     },
   ]);
   return (
-    <div className="App">
+    <div>
       <RouterProvider router={router}></RouterProvider>
     </div>
   );

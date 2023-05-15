@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  // dark mode and light mode toggle function //
+  const [theme, setTheme] = useState("light-theme");
+  const handleDarkAndLightMood = () => {
+    if (theme === "dark-theme") {
+      setTheme("light-theme");
+    } else {
+      setTheme("dark-theme");
+    }
+  };
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+  //////////////////////////////////////////////
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -28,29 +42,6 @@ const Header = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="/blog">Blog</Link>
-              </li>
-              <li>
-                <Link to="/login">Login</Link>
-              </li>
-              <li>
-                <Link to="/register">Register</Link>
-              </li>
-            </li>
-          </ul>
-        </div>
-        <Link to="/home" className="btn btn-ghost normal-case text-xl">
-          Mr-Code
-        </Link>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <li>
               <Link to="/home">Home</Link>
             </li>
             <li>
@@ -62,11 +53,32 @@ const Header = () => {
             <li>
               <Link to="/register">Register</Link>
             </li>
+          </ul>
+        </div>
+        <Link to="/home" className="btn btn-ghost normal-case text-xl">
+          Mr-Code
+        </Link>
+      </div>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">
+          <li>
+            <Link to="/home">Home</Link>
+          </li>
+          <li>
+            <Link to="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/register">Register</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn">Dark</Link>
+        <Link className="btn" onClick={handleDarkAndLightMood}>
+          {theme === "light-theme" ? "dark" : "light"}
+        </Link>
       </div>
     </div>
   );
