@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/UseContext";
 
 const Register = () => {
-  const { createUser, signInWithGoogle } = useContext(AuthContext);
+  const { createUser, signInWithGoogle, updateUserProfile } =
+    useContext(AuthContext);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
@@ -14,7 +15,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const confirmPassword = form.confirm.value;
-    console.log(name, email, password, confirmPassword);
+    // console.log(name, email, password, confirmPassword);
 
     if (password.length < 8) {
       setError("Please input at least 8 characters");
@@ -31,6 +32,7 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        handleUpdateUserName(name);
         setSuccess(true);
         setError("");
       })
@@ -51,6 +53,20 @@ const Register = () => {
       .catch((error) => {
         console.log(error);
         setError(error.message);
+      });
+  };
+
+  // update user name, display user name in the ui //
+  const handleUpdateUserName = (name) => {
+    const profile = {
+      displayName: name,
+    };
+    updateUserProfile(profile)
+      .then(() => {
+        console.log("get the user name");
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
   return (
