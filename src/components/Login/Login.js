@@ -1,18 +1,44 @@
 import React, { useContext, useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UseContext";
 
 const Login = () => {
-  const { signInWithGoogle } = useContext(AuthContext);
+  const { loginUser, signInWithGoogle } = useContext(AuthContext);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleLoginUser = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    loginUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        form.reset();
+        setSuccess(true);
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+        setSuccess(false);
+        console.log(error);
+      });
+  };
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
         console.log(user);
+        setSuccess(true);
+        // navigate("/");
+        setError("");
       })
       .catch((error) => {
         console.log(error);
@@ -27,7 +53,7 @@ const Login = () => {
             <h1 className="text-6xl font-bold my-6">Please Login now!</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-5">
-            <form className="card-body">
+            <form onSubmit={handleLoginUser} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -63,6 +89,11 @@ const Login = () => {
                   Please Register
                 </Link>
               </h1>
+
+              <p style={{ color: "green", textAlign: "center" }}>
+                {success && "User Login Successfully"}
+              </p>
+              <p style={{ color: "red", textAlign: "center" }}>{error}</p>
 
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>

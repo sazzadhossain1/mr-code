@@ -118,7 +118,7 @@ const Register = () => {
               </h1>
 
               <p style={{ color: "green", textAlign: "center" }}>
-                {success && "User Created Successfully"}
+                {success && "User Created Successfully Please Login"}
               </p>
               <p style={{ color: "red", textAlign: "center" }}>{error}</p>
               <div className="form-control mt-6">

@@ -85,6 +85,8 @@ const Header = () => {
           <li>
             <Link to="/register">Register</Link>
           </li>
+
+          <button>SignOut</button>
         </ul>
       </div>
       <div className="navbar-end">
