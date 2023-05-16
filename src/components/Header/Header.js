@@ -103,16 +103,20 @@ const Header = () => {
           <li>
             <Link to="/faq">FAQ</Link>
           </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-
-          <li>
-            <button onClick={handleLogOut}>SignOut</button>
-          </li>
+          {user?.uid ? (
+            <li>
+              <button onClick={handleLogOut}>SignOut</button>
+            </li>
+          ) : (
+            <>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+              <li>
+                <Link to="/register">Register</Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
       <div className="navbar-end">
