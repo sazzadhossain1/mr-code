@@ -88,6 +88,9 @@ const Header = () => {
         <Link to="/home" className="btn btn-ghost normal-case text-xl">
           Mr-Code
         </Link>
+        <small tabIndex={0} className="lg:hidden text-2xl">
+          {user?.email}
+        </small>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -118,6 +121,7 @@ const Header = () => {
             </>
           )}
         </ul>
+        {user?.email}
       </div>
       <div className="navbar-end">
         <Link className="btn" onClick={handleDarkAndLightMood}>
