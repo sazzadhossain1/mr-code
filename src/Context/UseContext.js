@@ -16,7 +16,6 @@ const auth = getAuth(app);
 
 const UseContext = ({ children }) => {
   const [user, setUser] = useState(null);
-
   // SignIn With Google //
   const signInWithGoogle = () => {
     return signInWithPopup(auth, googleProvider);
@@ -40,13 +39,10 @@ const UseContext = ({ children }) => {
   // get current user //
   useEffect(() => {
     const unSubScribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser === null) {
-        setUser(currentUser);
-      }
+      setUser(currentUser);
     });
     return () => unSubScribe();
   }, []);
-
   const authInfo = {
     user,
     createUser,
