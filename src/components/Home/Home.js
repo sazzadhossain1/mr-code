@@ -3,12 +3,11 @@ import "./Home.css";
 import { AuthContext } from "../../Context/UseContext";
 
 const Home = () => {
-  const { displayName } = useContext(AuthContext);
-  console.log(displayName);
+  const { user } = useContext(AuthContext);
+  console.log(user);
   return (
     <div>
       <h1>This is Home</h1>
-      <p>{displayName.name}</p>
     </div>
   );
 };
