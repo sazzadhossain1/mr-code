@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/UseContext";
 
 const Header = () => {
+  const { user, logOutUser } = useContext(AuthContext);
+  console.log(user);
+
   // dark mode and light mode toggle function //
   const [theme, setTheme] = useState("light-theme");
   const handleDarkAndLightMood = () => {
@@ -17,6 +21,17 @@ const Header = () => {
     document.body.className = theme;
   }, [theme]);
   //////////////////////////////////////////////
+
+  // LogOUt Function //
+  const handleLogOut = () => {
+    logOutUser()
+      .then(() => {
+        console.log("user Logout");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -53,12 +68,21 @@ const Header = () => {
             <li>
               <Link to="/faq">FAQ</Link>
             </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/register">Register</Link>
-            </li>
+
+            {user?.uid ? (
+              <li>
+                <button onClick={handleLogOut}>SignOut</button>
+              </li>
+            ) : (
+              <>
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+                <li>
+                  <Link to="/register">Register</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <Link to="/home" className="btn btn-ghost normal-case text-xl">
@@ -86,7 +110,9 @@ const Header = () => {
             <Link to="/register">Register</Link>
           </li>
 
-          <button>SignOut</button>
+          <li>
+            <button onClick={handleLogOut}>SignOut</button>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
