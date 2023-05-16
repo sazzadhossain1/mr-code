@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/UseContext";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   const handleCreateUser = (event) => {
     event.preventDefault();
@@ -14,13 +16,29 @@ const Register = () => {
     const confirmPassword = form.confirm.value;
     console.log(name, email, password, confirmPassword);
 
+    if (password.length < 8) {
+      setError("Please input at least 8 characters");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError("Your password not match");
+      return;
+    }
+
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        form.reset();
+        setSuccess(true);
+        setError("");
       })
       .catch((error) => {
         console.log(error);
+        setSuccess(false);
+        setError(error.message);
+        form.reset();
       });
   };
   return (
@@ -87,6 +105,10 @@ const Register = () => {
                 </Link>
               </h1>
 
+              <p style={{ color: "green", textAlign: "center" }}>
+                {success && "User Created Successfully"}
+              </p>
+              <p style={{ color: "red", textAlign: "center" }}>{error}</p>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">SignUp</button>
               </div>
