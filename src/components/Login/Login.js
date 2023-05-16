@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/UseContext";
 
 const Login = () => {
+  const { signInWithGoogle } = useContext(AuthContext);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
+  };
   return (
     <div className="">
       <div className="hero min-h-screen bg-base-200 ">
@@ -52,7 +68,10 @@ const Login = () => {
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
-            <button className="googleBtn btn btn-primary">
+            <button
+              onClick={handleGoogleSignIn}
+              className="googleBtn btn btn-primary"
+            >
               <p className="ml-5">SignIn With Google</p>
             </button>
           </div>
