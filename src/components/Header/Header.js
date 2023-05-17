@@ -5,7 +5,7 @@ import { AuthContext } from "../../Context/UseContext";
 
 const Header = () => {
   const { user, logOutUser } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   // dark mode and light mode toggle function //
   const [theme, setTheme] = useState("light-theme");

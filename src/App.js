@@ -36,6 +36,9 @@ function App() {
         },
         {
           path: "/courses",
+          loader: async () => {
+            return fetch("coursesData.json");
+          },
           element: <Courses></Courses>,
         },
         {

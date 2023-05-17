@@ -37,7 +37,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         setSuccess(true);
-        // navigate("/");
+        navigate("/");
         setError("");
       })
       .catch((error) => {
