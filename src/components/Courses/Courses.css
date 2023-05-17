@@ -1,4 +1,29 @@
 .heading-courses {
-  font-size: 50px;
+  font-size: 60px;
   text-align: center;
+}
+
+.grid-courses-div {
+  display: flex;
+  justify-content: center;
+}
+.all-link-div {
+  border: 2px solid black;
+  padding: 40px;
+}
+.all-link-div h1 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.all-link-div a {
+  color: blue;
+  font-weight: 500;
+}
+.map-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+
+  padding: 30px;
 }

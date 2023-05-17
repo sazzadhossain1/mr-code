@@ -6,12 +6,11 @@ const CourseSingle = ({ data }) => {
   const { name, img } = data;
   console.log();
   return (
-    <div>
-      <div>
+    <div className="single-course-parent-div">
+      <div className="single-course-div">
         <h1 style={{ font: "50px" }}>Side nav</h1>
-      </div>
-      <div>
-        <img style={{ height: "100px" }} src={img} alt="" />
+
+        <img style={{ height: "200px" }} src={img} alt="" />
       </div>
     </div>
   );
