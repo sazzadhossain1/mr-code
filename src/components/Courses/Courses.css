@@ -19,11 +19,11 @@
 .all-link-div a {
   color: blue;
   font-weight: 500;
+  text-decoration: underline;
 }
 .map-div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
-
   padding: 30px;
 }
