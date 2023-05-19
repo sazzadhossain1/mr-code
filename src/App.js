@@ -7,6 +7,7 @@ import Login from "./components/Login/Login";
 import Blog from "./components/Blog/Blog";
 import Courses from "./components/Courses/Courses";
 import Faq from "./components/Faq/Faq";
+import CourseDetailsPage from "./components/CourseDetailsPage/CourseDetailsPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -37,13 +38,20 @@ function App() {
         {
           path: "/courses",
           loader: async () => {
-            return fetch("coursesData.json");
+            return fetch("http://localhost:5000/allCoursesApi/");
           },
           element: <Courses></Courses>,
         },
         {
           path: "/faq",
           element: <Faq></Faq>,
+        },
+        {
+          path: "/courseDetailsPage/:id",
+          loader: async ({ params }) => {
+            return fetch(`http://localhost:5000/allCoursesApi/${params.id}`);
+          },
+          element: <CourseDetailsPage></CourseDetailsPage>,
         },
       ],
     },
