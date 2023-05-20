@@ -36,6 +36,9 @@ const CourseDetailsPage = () => {
             </div>
           </div>
           <Link to="/courses">
+            <button className="another-course-btn">Premium Access</button>
+          </Link>
+          <Link to="/courses">
             <button className="another-course-btn">Another Course</button>
           </Link>
           <ReactToPrint

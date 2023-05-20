@@ -1,0 +1,20 @@
+.welcome-parent-div {
+  margin-top: -150px;
+  z-index: 1;
+  position: relative;
+}
+.welcome-banner {
+  background-image: url("https://ninzio.com/edukul/wp-content/uploads/2019/10/form-bg.png");
+  height: 250px;
+  background-color: #ff9900;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.welcome-heading {
+  font-size: 50px;
+  font-weight: 500;
+}
