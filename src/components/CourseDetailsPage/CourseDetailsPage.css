@@ -1,0 +1,33 @@
+.details-main-div {
+  margin-top: 40px;
+}
+.details-div {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+.details-text-div {
+  background-color: #f1efef;
+  padding: 20px;
+}
+.name {
+  font-size: 50px;
+  margin-top: 30px;
+}
+
+.description {
+  font-size: 30px;
+  font-weight: 500;
+  border-bottom: 2px solid blue;
+  margin-top: 20px;
+}
+.lorem-description {
+  margin-top: 10px;
+  font-size: 22px;
+  color: rgb(141, 156, 170);
+}
+
+.support-class-projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
