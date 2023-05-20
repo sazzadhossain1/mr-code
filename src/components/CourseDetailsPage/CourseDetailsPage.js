@@ -1,13 +1,17 @@
 import React from "react";
 import "./CourseDetailsPage.css";
+import ReactToPrint from "react-to-print";
+import { useRef } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const CourseDetailsPage = () => {
   const courseDetailsData = useLoaderData();
   console.log(courseDetailsData);
+
+  const ref = useRef();
   return (
     <div className="details-main-div">
-      <div className="details-div container">
+      <div ref={ref} className="details-div container">
         <img className="img" src={courseDetailsData.img} alt="" />
         <div className="details-text-div">
           <p className="name">{courseDetailsData.name}</p>
@@ -34,6 +38,12 @@ const CourseDetailsPage = () => {
           <Link to="/courses">
             <button className="another-course-btn">Another Course</button>
           </Link>
+          <ReactToPrint
+            trigger={() => (
+              <button className="another-course-btn">Download PDF</button>
+            )}
+            content={() => ref.current}
+          />
         </div>
       </div>
     </div>
