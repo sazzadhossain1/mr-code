@@ -31,16 +31,17 @@ function App() {
           path: "/register",
           element: <Register></Register>,
         },
-        {
-          path: "/blog",
-          element: <Blog></Blog>,
-        },
+
         {
           path: "/courses",
           loader: async () => {
             return fetch("http://localhost:5000/allCoursesApi/");
           },
           element: <Courses></Courses>,
+        },
+        {
+          path: "/blog",
+          element: <Blog></Blog>,
         },
         {
           path: "/faq",

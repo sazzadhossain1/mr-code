@@ -10,9 +10,10 @@ const CourseSingle = ({ data }) => {
       <div className="single-course-div">
         <h1 className="course-name">{name}</h1>
         <img className="course-img" src={img} alt="" />
-        <button className="course-details-btn">
-          <Link to={`/courseDetailsPage/${id}`}>Details</Link>
-        </button>
+
+        <Link to={`/courseDetailsPage/${id}`}>
+          <button className="course-details-btn">Details</button>
+        </Link>
       </div>
     </div>
   );
