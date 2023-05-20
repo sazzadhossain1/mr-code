@@ -1,6 +1,6 @@
 import React from "react";
 import "./CourseDetailsPage.css";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const CourseDetailsPage = () => {
   const courseDetailsData = useLoaderData();
@@ -15,22 +15,25 @@ const CourseDetailsPage = () => {
           <p className="lorem-description">{courseDetailsData.description}</p>
           <div className="support-class-projects">
             <div className="class">
-              <p>120+</p>
-              <p>Total Class</p>
+              <p className="number">120+</p>
+              <p className="text">Total Class</p>
             </div>
             <div className="projects">
-              <p>50+</p>
-              <p>Total Projects</p>
+              <p className="number">50+</p>
+              <p className="text">Total Projects</p>
             </div>
             <div className="support">
-              <p>Support 9:00 - 5:00</p>
-              <p>Morning to Evening</p>
+              <p className="number">Support 9:00 - 5:00</p>
+              <p className="text">Morning to Evening</p>
             </div>
             <div className="teacher">
-              <p>20+</p>
-              <p>Total Teacher</p>
+              <p className="number">20+</p>
+              <p className="text">Total Teacher</p>
             </div>
           </div>
+          <Link to="/courses" className="another-course-btn">
+            <button>Another Course</button>
+          </Link>
         </div>
       </div>
     </div>

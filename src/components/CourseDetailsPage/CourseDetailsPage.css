@@ -31,3 +31,30 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
+.class {
+  margin-top: 20px;
+}
+
+.support {
+  margin-top: 20px;
+}
+.projects {
+  margin-top: 20px;
+}
+.teacher {
+  margin-top: 20px;
+}
+
+.number {
+  font-size: 40px;
+  color: rgb(104, 104, 255);
+  font-weight: 500;
+}
+.text {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.another-course-btn {
+}
