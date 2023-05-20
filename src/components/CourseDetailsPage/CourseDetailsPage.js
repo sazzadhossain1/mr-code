@@ -31,8 +31,8 @@ const CourseDetailsPage = () => {
               <p className="text">Total Teacher</p>
             </div>
           </div>
-          <Link to="/courses" className="another-course-btn">
-            <button>Another Course</button>
+          <Link to="/courses">
+            <button className="another-course-btn">Another Course</button>
           </Link>
         </div>
       </div>
