@@ -8,7 +8,7 @@ const CourseDetailsPage = () => {
   return (
     <div className="details-main-div">
       <div className="details-div container">
-        <img src={courseDetailsData.img} alt="" />
+        <img className="img" src={courseDetailsData.img} alt="" />
         <div className="details-text-div">
           <p className="name">{courseDetailsData.name}</p>
           <p className="description">Description</p>

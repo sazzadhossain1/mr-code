@@ -65,3 +65,18 @@
   font-weight: 500;
   width: 100%;
 }
+
+@media screen and (max-width: 1100px) {
+  .details-div {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .support-class-projects {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
