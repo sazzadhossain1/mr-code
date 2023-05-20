@@ -5,7 +5,7 @@ import CourseSingle from "../CourseSingle/CourseSingle";
 
 const Courses = () => {
   const getApi = useLoaderData();
-  console.log(getApi);
+  // console.log(getApi);
   return (
     <div>
       <h1 className="heading-courses">All Courses</h1>
