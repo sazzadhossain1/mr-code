@@ -1,8 +1,30 @@
+.welcome-parent-div {
+  margin-top: -150px;
+  z-index: 1;
+  position: relative;
+}
+.welcome-banner {
+  background-image: url("https://ninzio.com/edukul/wp-content/uploads/2019/10/form-bg.png");
+  height: 250px;
+  background-color: #ff9900;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.welcome-heading {
+  font-size: 50px;
+  font-weight: 500;
+}
 .offers-parent-div {
   background-image: url("https://ninzio.com/edukul/wp-content/uploads/2019/10/section-bg1-1.png?id=12906");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  height: 100vh;
+  padding: 50px;
 }
 
 .offers-heading {
@@ -21,12 +43,81 @@
   margin: auto;
 }
 
+/* ======================================== */
+.auto {
+}
+.offers-cart-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  position: relative;
+  text-align: center;
+  margin: auto;
+  margin-top: -150px;
+}
 .front-end {
+  margin-left: 60px;
   background-color: #9b51e0;
+
+  border-radius: 20px;
+  padding: 40px;
+  width: 400px;
+}
+.front-end h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+}
+.front-end p {
+  color: rgb(184, 170, 170);
+  font-weight: 500;
+  font-size: 18px;
+}
+.front-end button {
+  color: white;
+  text-decoration: underline;
 }
 .back-end {
+  margin-left: 60px;
   background-color: #0693e3;
+
+  border-radius: 20px;
+  padding: 40px;
+  width: 400px;
+}
+.back-end h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+}
+.back-end p {
+  color: rgb(238, 231, 231);
+  font-weight: 500;
+  font-size: 18px;
+}
+.back-end button {
+  color: white;
+  text-decoration: underline;
 }
 .mern-stake {
+  margin-left: 60px;
   background-color: #cf2e2e;
+
+  border-radius: 20px;
+  padding: 40px;
+  width: 400px;
+}
+.mern-stake h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+}
+.mern-stake p {
+  color: rgb(184, 170, 170);
+  font-weight: 500;
+  font-size: 18px;
+}
+.mern-stake button {
+  color: white;
+  text-decoration: underline;
 }
