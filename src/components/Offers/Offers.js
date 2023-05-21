@@ -21,10 +21,7 @@ const Offers = () => {
         <p className="offers-p">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
           nostrum voluptas explicabo cum dolore reiciendis corrupti impedit vero
-          ipsam iusto esse sed repellat vel, excepturi et quod? Est qui vel
-          placeat soluta facere autem eligendi et quibusdam perferendis repellat
-          pariatur, sed eaque molestiae alias nulla numquam odit assumenda
-          culpa. Veniam.
+          ipsam iusto esse sed repellat vel
         </p>
       </div>
       <div className="auto">

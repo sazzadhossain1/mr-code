@@ -3,6 +3,7 @@ import "./Home.css";
 import { AuthContext } from "../../Context/UseContext";
 import Carousal from "../Carousol/Carousal";
 import Offers from "../Offers/Offers";
+import UpcomingCourses from "../UpcomingCourses/UpcomingCourses";
 
 const Home = () => {
   const { user } = useContext(AuthContext);
@@ -11,6 +12,7 @@ const Home = () => {
     <div>
       <Carousal></Carousal>
       <Offers></Offers>
+      <UpcomingCourses></UpcomingCourses>
     </div>
   );
 };
