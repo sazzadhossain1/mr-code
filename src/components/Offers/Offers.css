@@ -39,7 +39,7 @@
   color: white;
   text-align: center;
   font-size: 22px;
-  width: 50%;
+  width: 80%;
   margin: auto;
 }
 
@@ -61,7 +61,7 @@
 
   border-radius: 20px;
   padding: 40px;
-  width: 400px;
+  width: 350px;
 }
 .front-end h2 {
   color: white;
@@ -83,7 +83,7 @@
 
   border-radius: 20px;
   padding: 40px;
-  width: 400px;
+  width: 350px;
 }
 .back-end h2 {
   color: white;
@@ -105,7 +105,7 @@
 
   border-radius: 20px;
   padding: 40px;
-  width: 400px;
+  width: 350px;
 }
 .mern-stake h2 {
   color: white;
@@ -120,4 +120,68 @@
 .mern-stake button {
   color: white;
   text-decoration: underline;
+}
+
+@media screen and (max-width: 1300px) {
+  .welcome-banner {
+    width: 100%;
+  }
+  .offers-p {
+    width: 100%;
+  }
+  .offers-cart-grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+  }
+  .front-end {
+    width: 80%;
+    margin: auto;
+  }
+  .back-end {
+    width: 80%;
+    margin: auto;
+  }
+  .mern-stake {
+    width: 80%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .offers-p {
+    width: 100%;
+  }
+  .offers-cart-grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    margin-top: -70px;
+  }
+  .front-end {
+    width: 80%;
+    margin: auto;
+  }
+  .back-end {
+    width: 80%;
+    margin: auto;
+  }
+  .mern-stake {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .welcome-banner {
+    width: 100%;
+    padding: 10px;
+  }
+  .welcome-heading {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .offers-p {
+  }
+  .offers-cart-grid {
+    margin: 20px;
+  }
 }
