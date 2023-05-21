@@ -179,7 +179,13 @@
   }
 }
 @media screen and (max-width: 700px) {
+  .offers-parent-div {
+    height: 100vh;
+    overflow: scroll;
+  }
   .offers-p {
+    width: 100%;
+    color: red;
   }
   .offers-cart-grid {
     margin: 20px;
