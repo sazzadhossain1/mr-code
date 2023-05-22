@@ -1,13 +1,16 @@
 import React, { useContext, useState } from "react";
 import "./Login.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UseContext";
 
 const Login = () => {
   const { loginUser, signInWithGoogle } = useContext(AuthContext);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/home";
 
   const handleLoginUser = (event) => {
     event.preventDefault();
@@ -21,6 +24,7 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
+        navigate(from, { replace: true });
         setSuccess(true);
         setError("");
       })
@@ -37,7 +41,8 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         setSuccess(true);
-        navigate("/");
+
+        navigate(from, { replace: true });
         setError("");
       })
       .catch((error) => {
