@@ -59,14 +59,9 @@ const Header = () => {
             <li>
               <Link to="/home">Home</Link>
             </li>
-            <li>
-              <Link to="/blog">Blog</Link>
-            </li>
+
             <li>
               <Link to="/courses">Courses</Link>
-            </li>
-            <li>
-              <Link to="/faq">FAQ</Link>
             </li>
 
             {user?.uid ? (
@@ -100,13 +95,7 @@ const Header = () => {
           <li>
             <Link to="/courses">Courses</Link>
           </li>
-          <li>
-            <Link to="/blog">Blog</Link>
-          </li>
 
-          <li>
-            <Link to="/faq">FAQ</Link>
-          </li>
           {user?.uid ? (
             <li>
               <button onClick={handleLogOut}>SignOut</button>

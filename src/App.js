@@ -36,7 +36,7 @@ function App() {
         {
           path: "/courses",
           loader: async () => {
-            return fetch("http://localhost:5000/allCoursesApi/");
+            return fetch("https://mr-code-server.vercel.app/allCoursesApi/");
           },
           element: <Courses></Courses>,
         },
@@ -51,7 +51,9 @@ function App() {
         {
           path: "/courseDetailsPage/:id",
           loader: async ({ params }) => {
-            return fetch(`http://localhost:5000/allCoursesApi/${params.id}`);
+            return fetch(
+              `https://mr-code-server.vercel.app/allCoursesApi/${params.id}`
+            );
           },
           element: (
             <PrivateRoute>
