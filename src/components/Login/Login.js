@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UseContext";
 
 const Login = () => {
-  const { loginUser, signInWithGoogle } = useContext(AuthContext);
+  const { loginUser, signInWithGoogle, setLoading } = useContext(AuthContext);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
@@ -17,6 +17,7 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
+
     console.log(email, password);
 
     loginUser(email, password)
@@ -32,6 +33,9 @@ const Login = () => {
         setError(error.message);
         setSuccess(false);
         console.log(error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 

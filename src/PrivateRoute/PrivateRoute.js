@@ -3,9 +3,13 @@ import { AuthContext } from "../Context/UseContext";
 import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
-  const { user } = useContext(AuthContext);
+  const { user, loading } = useContext(AuthContext);
   const location = useLocation();
   console.log(user);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   if (user && user.uid) {
     return children;
