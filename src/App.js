@@ -8,6 +8,7 @@ import Blog from "./components/Blog/Blog";
 import Courses from "./components/Courses/Courses";
 import Faq from "./components/Faq/Faq";
 import CourseDetailsPage from "./components/CourseDetailsPage/CourseDetailsPage";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 function App() {
   const router = createBrowserRouter([
@@ -52,7 +53,11 @@ function App() {
           loader: async ({ params }) => {
             return fetch(`http://localhost:5000/allCoursesApi/${params.id}`);
           },
-          element: <CourseDetailsPage></CourseDetailsPage>,
+          element: (
+            <PrivateRoute>
+              <CourseDetailsPage></CourseDetailsPage>
+            </PrivateRoute>
+          ),
         },
       ],
     },

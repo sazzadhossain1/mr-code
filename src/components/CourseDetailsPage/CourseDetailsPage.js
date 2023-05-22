@@ -6,7 +6,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const CourseDetailsPage = () => {
   const courseDetailsData = useLoaderData();
-  console.log(courseDetailsData);
+  // console.log(courseDetailsData);
 
   const ref = useRef();
   return (
@@ -35,9 +35,7 @@ const CourseDetailsPage = () => {
               <p className="text">Total Teacher</p>
             </div>
           </div>
-          <Link to="/courses">
-            <button className="another-course-btn">Premium Access</button>
-          </Link>
+
           <Link to="/courses">
             <button className="another-course-btn">Another Course</button>
           </Link>
